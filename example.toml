@@ -1,0 +1,24 @@
+[server]
+# Listen on this address and port.
+listen = "127.0.0.1"
+port = 2843
+# Maximum size of each file uploading to server, in bytes.
+max-upload-size = 4294967296
+
+[share]
+# Name of the share and path to it.
+name = "main"
+path = "./share"
+
+[sessions]
+# TTL of a user session, in seconds.
+ttl = 604800
+# Path to sessions cache.
+cache = "./sessions.json"
+
+# Users who is allowed to connect to the server. Format is: user.$LOGIN
+[users.guest]
+email = "guest@example.com"
+# Salted password hash. Can be generated using openssl utility:
+# openssl passwd -6
+password_hash = "$6$I9VS6DEnOeV3dl6N$7LvFHT8co4TtlueBHfgRoYXOFHEyPnh3by5E0Yo3UJKHoylypMhLJ3EscM1wx5PLgBabcpbzuCzU98WaALxJ70"
