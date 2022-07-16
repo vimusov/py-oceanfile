@@ -32,7 +32,7 @@ class AuthSessions:
         self.__ttl: int = section['ttl']
         self.__path = Path(section['cache'])
         try:
-            with open(self.__path, 'rt') as sessions_file:
+            with self.__path.open(mode='rt') as sessions_file:
                 sessions = json_load(sessions_file)
         except FileNotFoundError:
             sessions = dict()
