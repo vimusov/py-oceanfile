@@ -1,3 +1,19 @@
 [build-system]
-requires = ["setuptools >= 40.6.0",  "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ['poetry-core>=1.0.0']
+build-backend = 'poetry.core.masonry.api'
+
+[tool.poetry]
+name = "oceanfile"
+version = "1.0"
+description = "Simplified and lightweight alternative to Seafile server"
+license = "GPL"
+
+[tool.poetry.scripts]
+oceanfile = 'oceanfile.main:main'
+
+[tool.poetry.dependencies]
+aiohttp
+tomli
+
+[tool.poetry.extras]
+systemd = ["systemd"]
